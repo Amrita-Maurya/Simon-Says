@@ -1,0 +1,113 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #1a1a1a;
+    color: white;
+}
+
+.container {
+    text-align: center;
+    padding: 20px;
+}
+
+h1 {
+    margin-bottom: 30px;
+    font-size: 2.5rem;
+    color: #fff;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+.game-container {
+    margin: 20px auto;
+    position: relative;
+}
+
+.game-buttons {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    width: 300px;
+    height: 300px;
+    margin: 0 auto;
+}
+
+.button {
+    border-radius: 15px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    opacity: 0.7;
+}
+
+.button:hover {
+    opacity: 1;
+}
+
+.button.active {
+    opacity: 1;
+    transform: scale(0.95);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+}
+
+.green { background-color: #00ff00; }
+.red { background-color: #ff0000; }
+.yellow { background-color: #ffff00; }
+.blue { background-color: #0000ff; }
+
+#start-btn {
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin: 20px 0;
+}
+
+#start-btn:hover {
+    background-color: #45a049;
+}
+
+.score {
+    font-size: 1.5rem;
+    margin: 10px 0;
+}
+
+.game-status {
+    margin-top: 20px;
+    font-size: 1.2rem;
+    min-height: 30px;
+}
+
+/* Responsive Design */
+@media (max-width: 400px) {
+    .game-buttons {
+        width: 250px;
+        height: 250px;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+}
+
+/* Animations */
+@keyframes buttonPress {
+    0% { transform: scale(1); }
+    50% { transform: scale(0.95); }
+    100% { transform: scale(1); }
+}
+
+.button.pressed {
+    animation: buttonPress 0.2s ease;
+}
